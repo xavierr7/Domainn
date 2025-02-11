@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome My Love</title>
+    <style>
+        body {
+            background-color: pink;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+        h1 {
+            color: red;
+            font-size: 2.5em;
+            margin-top: 20%;
+        }
+        p {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .heart {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: red;
+            clip-path: polygon(50% 0%, 100% 35%, 82% 100%, 50% 80%, 18% 100%, 0% 35%);
+            animation: float 4s linear infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0) scale(1); opacity: 1; }
+            50% { transform: translateY(-100px) scale(1.2); opacity: 0.8; }
+            100% { transform: translateY(-200px) scale(1.5); opacity: 0; }
+        }
+        .enter-button {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            color: white;
+            background-color: red;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+        .enter-button:hover {
+            background-color: darkred;
+        }
+    </style>
+</head>
+<body>
+    <script>if(document.referrer.indexOf("verify.html") === -1) window.location.href="verify.html";</script>
+<h1>Welcome my beloved love, my Katyusha ❣️</h1>
+    <p>👇 Click the below option to enter into my heart 👇</p>
+    <a href="yes.html" class="enter-button">Enter My Heart</a>
+    
+    <script>
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.classList.add("heart");
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration = Math.random() * 3 + 2 + "s";
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 4000);
+        }
+        setInterval(createHeart, 300);
+    </script>
+</body>
+</html>
